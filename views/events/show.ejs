@@ -1,8 +1,8 @@
 <%- include('../partials/header') %>
 
 <section id="show-page">
-  <div>Name: </div>
-  <div><%= event.name %></div>
+  <div>Function: </div>
+  <div><%= event.function %></div>
   <div>Date: </div>
   <div><%= event.date %></div>
   <div>Time: </div>
@@ -15,7 +15,7 @@
   <div><%= event.details %></div>
 
   <div>RSVP: </div>
-  <div><%= event.RSVP ? 'Going' : 'Not Going' : 'May be' %>
+  <div><%= event.happeningNow? 'Yes' : 'No' %>
   </div>
   <div>Contact Host: </div>
   <div><%= event.contactHost %></div>
@@ -28,7 +28,7 @@
   </ul>
 </section>
 
-<!-- add to guest list form below this comment -->
+
 <form id="add-guest-form" action="/events/<%= event._id %>/guests" method="POST">
   <label>Name:</label>
   <input type="text" name="name">
@@ -37,7 +37,6 @@
   <input type="submit" value="Add Guest">
 </form>
 
-<!-- Reviews Section -->
 <h2>Reviews</h2>
 <form id="add-review-form" method="POST" action="/events/<%= event._id %>/reviews">
   <label>Review:</label>

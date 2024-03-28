@@ -1,0 +1,36 @@
+<%- include('../partials/header') %>
+
+<form id="new-form" action="/movies" method="POST">
+  <label>Function:</label>
+  <input type="text" name="function">
+  <label>Date:</label>
+  <input type="date" name="date">
+  <label>Time:</label>
+  <input type="time" name="time">
+  <label>Venue:</label>
+  <input type="text" name="venue">
+  <label>Invite:</label>
+  <input type="text" name="invite">
+  <label>Guest Count:</label>
+  <input type="number" name="guestCount">
+  <label>Details:</label>
+  <input type="text" name="details">
+  
+  
+  <label>Contact Host (Email):</label>
+  <input type="email" name="contactHostEmail" required>
+  <label>Contact Host (Phone):</label>
+  <input type="tel" name="contactHostPhone" required>
+  
+  <label>RSVP:</label>
+  <select name="RSVP">
+    <option value="Going">Going</option>
+    <option value="Not Going">Not Going</option>
+    <option value="May be">May be</option>
+  </select>
+  <label>Happening Now:</label>
+  <input type="checkbox" name="happeningNow" checked>
+  <input type="submit" value="Add Event">
+</form>
+
+<%- include('../partials/footer') %>

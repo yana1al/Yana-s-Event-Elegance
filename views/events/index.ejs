@@ -1,0 +1,32 @@
+<%- include('../partials/header') %>
+
+<table id="list">
+  <thead>
+    <tr>
+      <th>Function</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Venue</th>
+      <th>Actions</th> 
+    </tr>
+  </thead>
+  <tbody>
+    <% events.forEach(function(event) { %> 
+      <tr>
+        <td><%= event.function %></td>
+        <td><%= event.date %></td>
+        <td><%= event.time %></td>
+        <td><%= event.venue %></td>
+        <td>
+          <a href="/events/<%= event._id %>">DETAILS</a> 
+          <a href="/events/<%= event._id %>/edit">EDIT</a> 
+          <form action="/events/<%= event._id %>?_method=DELETE" method="POST" style="display:inline;">
+            <button type="submit">DELETE</button> 
+          </form>
+        </td>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>
+
+<%- include('../partials/footer') %>

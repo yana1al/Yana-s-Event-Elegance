@@ -1,0 +1,78 @@
+<%- include('../partials/header') %>
+
+<section id="show-page">
+  <div>Name: </div>
+  <div><%= event.name %></div>
+  <div>Date: </div>
+  <div><%= event.date %></div>
+  <div>Time: </div>
+  <div><%= event.time %></div>
+  <div>Venue: </div>
+  <div><%= event.venue %></div>
+  <div>Guest Count: </div>
+  <div><%= event.guestCount %></div>
+  <div>Details: </div>
+  <div><%= event.details %></div>
+
+  <div>RSVP: </div>
+  <div><%= event.RSVP ? 'Going' : 'Not Going' : 'May be' %>
+  </div>
+  <div>Contact Host: </div>
+  <div><%= event.contactHost %></div>
+  
+  <div>Member:</div>
+  <ul>
+    <% event.guests.forEach(function(guest) { %>
+      <li><%= guest.name %> <small><%= guest.contactInformation %></small></li>
+    <% }); %>
+  </ul>
+</section>
+
+<!-- add to guest list form below this comment -->
+<form id="add-guest-form" action="/events/<%= event._id %>/guests" method="POST">
+  <label>Name:</label>
+  <input type="text" name="name">
+  <label>Contact Information:</label>
+  <input type="text" name="contactInformation">
+  <input type="submit" value="Add Guest">
+</form>
+
+<!-- Reviews Section -->
+<h2>Reviews</h2>
+<form id="add-review-form" method="POST" action="/events/<%= event._id %>/reviews">
+  <label>Review:</label>
+  <textarea name="content"></textarea>
+  <label>Rating:</label>
+  <select name="rating">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5" selected>5</option>
+  </select>
+  <input type="submit" value="Add Review">
+</form>
+
+<% if (event.reviews.length) { %>
+  <table>
+    <tbody>
+      <% let total = 0 %>
+      <% event.reviews.forEach(function(review) { %>
+        <% total += review.rating %>
+        <tr>
+          <td><%= review.createdAt.toLocaleDateString() %></td>
+          <td><%= review.content %></td>
+          <td><%= review.rating %></td>
+        </tr>
+      <% }); %>
+      <tr>
+        <td colspan="2"></td>
+        <td><strong><%= (total / event.reviews.length).toFixed(1) %></strong></td>
+      </tr>
+    </tbody>
+  </table>
+<% } else { %>
+  <h5>No Reviews Yet</h5>
+<% } %>
+
+<%- include('../partials/footer') %>

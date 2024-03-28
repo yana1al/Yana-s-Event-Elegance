@@ -4,8 +4,15 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/events');
+require('dotenv').config();
+// connect to the database with AFTER the config vars are processed
+require('./config/database');
+
+const indexRouter = require('./routes/index');
+const eventsRouter = require('./routes/events');
+const reviewsRouter = require('./routes/reviews');
+const subscribersRouter = require('./routes/subscribers');
+
 
 var app = express();
 
@@ -20,7 +27,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/events', eventsRouter);
+// Mount these routers to root because not all 
+// paths for a related/nested resource begin the same
+app.use('/', reviewsRouter);
+app.use('/', subscribersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

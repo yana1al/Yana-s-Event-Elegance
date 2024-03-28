@@ -7,14 +7,15 @@
 
 
 
-Welcome to the Event Planner App! This README file will guide you through the process of setting up and running the app on your local machine.
+Welcome App Users! This README file will guide you through the process of setting up and running the app on your device.
 
-Description
+Description:
 This Event Planner app is a web application designed to help users organize and manage their events efficiently. Users can create, update, and delete events, invite guests, and track RSVPs.
 
 Features:
 User authentication: Users can sign up, log in, and log out securely.
 Create events: Users can create new events with details such as title, date, time, location, and description.
+Review All created events.
 Update and delete events: Users can edit and delete events they have created.
 Invite guests: Users can invite guests to their events via email.
 RSVP tracking: Users can track RSVP responses from their guests.
@@ -46,5 +47,9 @@ Define the following variables:
 MONGODB_URI: MongoDB connection URI.
 CLIENT_URL: URL of the frontend client (e.g., http://localhost:3000).
 Run the app: npm start
+
+Project Plan: https://trello.com/invite/b/1rWKTVMR/ATTIf075450badb778bce8e0548019c03c17739FFDB5/2nd-projectga
+
+
 
 Access the app in your browser at localhost:3000

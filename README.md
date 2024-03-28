@@ -7,9 +7,7 @@
 [Project Plan](https://trello.com/invite/b/1rWKTVMR/ATTIf075450badb778bce8e0548019c03c17739FFDB5/2nd-projectga)
 [WireFrame](https://www.figma.com/file/dHGHcWz3OGa6spWrxXy8Vf/EVENT-E-VITE-APP-PLAN?type=whiteboard&node-id=0%3A1&t=nOG4Fq39SEft2cE1-1)
 
-# Project Head: Alima Sharma
-[LinkedIn](https://www.linkedin.com/in/alimasharma/)
-[GitHub](https://github.com/yana1al/Yana-s-Event-Elegance)
+# Project Head: Alima Sharma [LinkedIn](https://www.linkedin.com/in/alimasharma/) [GitHub](https://github.com/yana1al/Yana-s-Event-Elegance)
 
 Welcome App Users! This README file will guide you through the process of setting up and running the app on your device.
 

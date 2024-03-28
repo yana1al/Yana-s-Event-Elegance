@@ -10,10 +10,10 @@
 
 Welcome App Users! This README file will guide you through the process of setting up and running the app on your device.
 
-Description:
+# Description:
 This Event Planner app is a web application designed to help users organize and manage their events efficiently. Users can create, update, and delete events, invite guests, and track RSVPs.
 
-Features:
+# Features:
 User authentication: Users can sign up, log in, and log out securely.
 Create events: Users can create new events with details such as title, date, time, location, and description.
 Review All created events.
@@ -22,14 +22,14 @@ Invite guests: Users can invite guests to their events via email.
 RSVP tracking: Users can track RSVP responses from their guests.
 Reminder notifications: Users receive reminders for upcoming events.
 
-Technologies Used:
+# Technologies Used:
 Frontend: HTML, CSS, JavaScript 
 Backend: Node.js, Express.js, MongoDB
 
 
 
 
-Prerequisites:
+# Prerequisites:
 Before running the app, make sure to have the following installed:
 
 Node.js
@@ -50,8 +50,8 @@ CLIENT_URL: URL of the frontend client (e.g., http://localhost:3000).
 Run the app: npm start
 
 
-Project Head: Alima Sharma
+# Project Head: Alima Sharma
 
 
-App browser: Google, Safari, Firefox
-Access @ localhost:3000
+# App browser: Google, Safari, Firefox
+# Access @ localhost:3000

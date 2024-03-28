@@ -3,6 +3,11 @@
 
 ![image](https://github.com/yana1al/Yana-s-Event-Elegance/assets/160801353/034293bf-beb5-4f74-bac6-894c174c7c5f)
 
+
+[Project Plan](https://trello.com/invite/b/1rWKTVMR/ATTIf075450badb778bce8e0548019c03c17739FFDB5/2nd-projectga)
+[WireFrame](https://www.figma.com/file/dHGHcWz3OGa6spWrxXy8Vf/EVENT-E-VITE-APP-PLAN?type=whiteboard&node-id=0%3A1&t=nOG4Fq39SEft2cE1-1)
+
+
 Welcome App Users! This README file will guide you through the process of setting up and running the app on your device.
 
 Description:
@@ -44,8 +49,6 @@ MONGODB_URI: MongoDB connection URI.
 CLIENT_URL: URL of the frontend client (e.g., http://localhost:3000).
 Run the app: npm start
 
-[Project Plan](https://trello.com/invite/b/1rWKTVMR/ATTIf075450badb778bce8e0548019c03c17739FFDB5/2nd-projectga)
-[WireFrame](https://www.figma.com/file/dHGHcWz3OGa6spWrxXy8Vf/EVENT-E-VITE-APP-PLAN?type=whiteboard&node-id=0%3A1&t=nOG4Fq39SEft2cE1-1)
 
 Project Head: Alima Sharma
 

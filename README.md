@@ -1,7 +1,8 @@
 # Yana-s-Event-Elegance
 
 
-![12083C6A-4B27-4FBF-AC93-7B66B7040B55_1_201_a](https://github.com/yana1al/Yana-s-Event-Elegance/assets/160801353/3b774d9b-2d6b-4676-bd91-afdd4cb51b22)
+![image](https://github.com/yana1al/Yana-s-Event-Elegance/assets/160801353/034293bf-beb5-4f74-bac6-894c174c7c5f)
+
 
 APP MODEL: https://www.figma.com/file/dHGHcWz3OGa6spWrxXy8Vf/EVENT-E-VITE-APP-PLAN?type=whiteboard&node-id=0%3A1&t=nOG4Fq39SEft2cE1-1
 

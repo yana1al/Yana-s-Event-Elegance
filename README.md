@@ -1,1 +1,50 @@
 # Yana-s-Event-Elegance
+
+
+
+
+![12083C6A-4B27-4FBF-AC93-7B66B7040B55_1_201_a](https://github.com/yana1al/Yana-s-Event-Elegance/assets/160801353/3b774d9b-2d6b-4676-bd91-afdd4cb51b22)
+
+
+
+Welcome to the Event Planner App! This README file will guide you through the process of setting up and running the app on your local machine.
+
+Description
+This Event Planner app is a web application designed to help users organize and manage their events efficiently. Users can create, update, and delete events, invite guests, and track RSVPs.
+
+Features:
+User authentication: Users can sign up, log in, and log out securely.
+Create events: Users can create new events with details such as title, date, time, location, and description.
+Update and delete events: Users can edit and delete events they have created.
+Invite guests: Users can invite guests to their events via email.
+RSVP tracking: Users can track RSVP responses from their guests.
+Reminder notifications: Users receive reminders for upcoming events.
+
+Technologies Used:
+Frontend: HTML, CSS, JavaScript (React.js)
+Backend: Node.js, Express.js, MongoDB
+Authentication: JSON Web Tokens (JWT)
+Email: Nodemailer
+Notifications: Socket.io
+
+Prerequisites
+Before running the app, make sure you have the following installed on your machine:
+
+Node.js
+MongoDB
+
+Clone this repository to your local machine: 
+
+Navigate to the project directory: cd Yana-s-Event-Elegance
+
+Install dependencies:npm install
+
+Set up environment variables:
+
+Create a .env file in the root directory.
+Define the following variables:
+MONGODB_URI: MongoDB connection URI.
+CLIENT_URL: URL of the frontend client (e.g., http://localhost:3000).
+Run the app: npm start
+
+Access the app in your browser at localhost:3000

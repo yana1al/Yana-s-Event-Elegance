@@ -1,10 +1,9 @@
 # Yana-s-Event-Elegance
 
 
-
-
 ![12083C6A-4B27-4FBF-AC93-7B66B7040B55_1_201_a](https://github.com/yana1al/Yana-s-Event-Elegance/assets/160801353/3b774d9b-2d6b-4676-bd91-afdd4cb51b22)
 
+APP MODEL: https://www.figma.com/file/dHGHcWz3OGa6spWrxXy8Vf/EVENT-E-VITE-APP-PLAN?type=whiteboard&node-id=0%3A1&t=nOG4Fq39SEft2cE1-1
 
 
 Welcome App Users! This README file will guide you through the process of setting up and running the app on your device.

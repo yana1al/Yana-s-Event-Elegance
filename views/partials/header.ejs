@@ -9,9 +9,11 @@
 </head>
 <body>
   <nav>
+    <img src="path/to/yana-logo.png" alt="YANA Logo"> <!-- Replace 'path/to/yana-logo.png' with the actual path to your YANA logo -->
+    <span>YANA</span> <!-- Text element for the name -->
     <a href="/events/new" <%- title === 'New Event' ? 'class="active"' : '' %>>NEW EVENT</a>
     <a href="/events" <%- title === 'My Events' ? 'class="active"' : '' %>>MY EVENTS</a>
-    <a href="/subscriber/new" <%- title === 'Sign In' ? 'class="active"' : '' %>>SIGN IN</a>
+    <a href="/subscribers/new" <%- title === 'Sign In' ? 'class="active"' : '' %>>SIGN IN</a>
     <a href="/signup" <%- title === 'Sign Up' ? 'class="active"' : '' %>>SIGN UP</a>
   </nav>
   <main>

@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
 <section id="show-page">
-  <div>Function: </div>
+  <div>Occassion: </div>
   <div><%= event.function %></div>
   <div>Date: </div>
   <div><%= event.date %></div>
@@ -15,10 +15,9 @@
   <div><%= event.details %></div>
 
   <div>RSVP: </div>
-  <div><%= event.happeningNow? 'Yes' : 'No' %>
-  </div>
+  <div><%= event.happeningNow ? 'Yes' : 'No' %></div>
   <div>Contact Host: </div>
-  <div><%= event.contactHost %></div>
+  <div><%= event.contactHostEmail %> (Email) / <%= event.contactHostPhone %> (Phone)</div>
   
   <div>Member:</div>
   <ul>
@@ -27,7 +26,6 @@
     <% }); %>
   </ul>
 </section>
-
 
 <form id="add-guest-form" action="/events/<%= event._id %>/guests" method="POST">
   <label>Name:</label>

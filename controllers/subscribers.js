@@ -1,23 +1,32 @@
 const Subscriber = require('../models/subscriber');
 const Event = require('../models/event');
 
-// Function to add a subscriber to an event
-async function addToMember(req, res) {
-  try {
-    const event = await Event.findById(req.params.id);
-    if (!event) {
-      return res.status(404).send('Event not found');
+const subscribersCtrl = {
+    
+    new: (req, res) => {
+      res.render('subscribers/new'); 
+    },
+  
+    
+    create: async (req, res) => {
+      try {
+        
+        res.send('Subscriber created successfully!');
+      } catch (error) {
+        res.status(500).send('Error creating subscriber: ' + error.message);
+      }
+    },
+  
+    
+    addToMember: async (req, res) => {
+      try {
+        
+        res.send('Subscriber added to event successfully!');
+      } catch (error) {
+        res.status(500).send('Error adding subscriber to event: ' + error.message);
+      }
     }
-    const newSubscriber = await Subscriber.create(req.body);
-    event.members.push(newSubscriber._id);
-    await event.save();
-    res.redirect(`/events/${event._id}`);
-  } catch (err) {
-    console.error('Error adding subscriber:', err);
-    res.status(500).send('Error adding subscriber. Please try again later.');
-  }
-}
-
-module.exports = {
-  addToMember
-};
+  };
+  
+  
+  module.exports = subscribersCtrl;

@@ -28,8 +28,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/events', eventsRouter);
-// Mount these routers to root because not all 
-// paths for a related/nested resource begin the same
 app.use('/', reviewsRouter);
 app.use('/', subscribersRouter);
 

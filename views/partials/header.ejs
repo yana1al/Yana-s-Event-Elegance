@@ -5,28 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel='stylesheet' href='/stylesheets/style.css' />
+  
   <title><%= title %></title>
 </head>
 <body>
     <nav>
         <img src="/Users/summerway/Desktop/Logo.png" alt="YANA Logo">
-        <a href="/events/new" <%- title === 'New Event' ? 'class="active"' : '' %>>NEW EVENT</a>
+        <a href="/subscribers/new" <%- title === 'Sign In' ? 'class="active"' : '' %>>
+          SIGN IN</a>
+        
+        <a href="/events/new" <%- title === 'New Event' ? 'class="active"' : '' %>>CREATE EVENT</a>
         <a href="/events" <%- title === 'My Events' ? 'class="active"' : '' %>>MY EVENTS</a>
-        <button id="sign-in-btn">SIGN IN</button> <!-- Added ID to the Sign In button -->
+        
+        
+            <a href="/logout">LOG OUT</a>
+       
     </nav>
     <main>
         <h1><%= title %></h1>
     </main>
-
-    <script>
-      // Get the Sign In button element
-      const signInBtn = document.getElementById('sign-in-btn');
-
-      // Add event listener to the Sign In button
-      signInBtn.addEventListener('click', () => {
-          // Redirect the user to the sign-up page when the button is clicked
-          window.location.href = '/signup';
-      });
-    </script>
+    <script src="/js/client.js"></script>
 </body>
 </html>

@@ -1,12 +1,40 @@
 <%- include('../partials/header') %>
 
-<div>Please Sign In:</div>
-<form id="sign-in-form" action="/auth/signin" method="POST">
-  <label for="email">Email:</label>
-  <input type="email" id="email" name="email">
-  <label for="password">Password:</label>
-  <input type="password" id="password" name="password">
-  <input type="submit" value="Sign In">
-</form>
+<div id="signin-container">
+  <div>Please Sign In:</div>
+  <form id="sign-in-form" action="/auth/login" method="POST">
+    <div style="margin-bottom: 10px;">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div style="margin-bottom: 10px;">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+    <input type="submit" value="Sign In">
+  </form>
+
+  <div style="margin-top: 10px;">
+    Don't have an account? <a href="#" id="signup-link">Sign Up</a>
+  </div>
+</div>
+
+<div id="signup-container" style="display: none;">
+  <div>Please Sign Up:</div>
+  <form id="add-subscriber-form" action="/subscribers" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="contactInformation">Contact Information (Email/Phone Number):</label>
+    <input type="text" id="contactInformation" name="contactInformation" required>
+    <input type="submit" value="Sign Up">
+  </form>
+
+  <div style="margin-top: 10px;">
+    Already have an account? <a href="#" id="signin-link">Sign In</a>
+  </div>
+</div>
 
 <%- include('../partials/footer') %>
+
+<script>
+  document.getElemen

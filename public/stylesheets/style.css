@@ -1,28 +1,33 @@
 * {
   box-sizing: border-box;
   font-family: Helvetica;
-  color: black;
+  color: rgb(7, 3, 1);
 }
 
 body {
   margin: 0;
-  height: 100vh;
+  height: 100vh; 
   display: grid;
   grid-template-rows: 50px 1fr;
   grid-template-areas: 
     "nav"
     "main";
-  background-color: #8154cf; 
+}
+
+html {
+  background-image: url('/eventP.jpg');
+  background-size: 30%;
+  background-position: top;
 }
 
 body > nav {
   grid-area: nav;
-  background-color: rgb(97, 79, 237); /* Change header color to purple */
+  background-color: rgb(129, 62, 218);
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 0 20px 0 30px;
-  border-bottom: 2px solid rgb(144, 71, 217); 
+  padding: 0 20px;
+  border-bottom: 1px solid rgb(174, 170, 178);
 }
 
 nav > img {
@@ -36,17 +41,12 @@ body > main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #E8ECEB;
   padding: 20px;
   overflow-y: scroll;
 }
 
-body > main h1:first-child {
-  margin-bottom: 50px;
-}
-
 nav > a {
-  margin: 20px;
+  margin: 0 20px;
   text-decoration: none;
   padding: 10px;
   border-radius: 5px;
@@ -62,7 +62,7 @@ nav > a.active {
   cursor: default;
 }
 
-#new-form {
+#new-form, #add-review-form, #add-performer-form {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(2, minmax(auto, 22rem));
@@ -79,12 +79,11 @@ nav > a.active {
 #new-form input[type="submit"] {
   grid-column: span 2;
   width: 10rem;
-  margin-left: auto;
 }
 
 table {
   font-size: 20px;
-  margin-top: 20px; /* Add margin-top to push the table up */
+  margin-top: 20px;
 }
 
 table thead th {
@@ -124,18 +123,13 @@ table td {
   font-weight: bold;
 }
 
-#add-review-form,
-#add-performer-form {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 1rem;
+#add-review-form, #add-performer-form {
   margin-bottom: 2rem;
 }
 
 #add-review-form input[type="submit"],
 #add-performer-form input[type="submit"] {
   width: 10rem;
-  grid-column: 2 / 3;
 }
 
 hr {
@@ -168,4 +162,52 @@ hr {
 
 #show-page li {
   font-weight: bold;
+}
+
+.page-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-column {
+  width: 45%;
+}
+
+.right-column {
+  width: 50%;
+}
+
+.about-section {
+  margin-bottom: 20px;
+}
+
+.signup-signin-section {
+  margin-bottom: 20px;
+}
+
+header {
+  background-color: #c5c7d0;
+  color: #080101;
+  padding: 30px;
+  text-align: center;
+}
+
+footer {
+  background-color: #c4c0c6;
+  color: #090101;
+  padding: 40px;
+  text-align: center;
+}
+
+.main-content {
+  display: flex;
+}
+
+.about-section {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.signup-signin-section {
+  flex: 1;
 }

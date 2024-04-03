@@ -10,32 +10,42 @@ exports.getAllEvents = async (req, res) => {
 };
 
 exports.getEventById = async (req, res) => {
-    try {
-      const event = await Event.findById(req.params.id);
-      if (event) {
-        res.render('events/show', { event, title: event.name }); 
-      } else {
-        const error = {
-          status: 404,
-          stack: 'Event not found'
-        };
-        res.status(404).render('error', { message: 'Event not found', error });
-      }
-    } catch (error) {
-      res.status(500).render('error', { message: 'Internal Server Error', error });
-    }
-  };
-  
-
-exports.createEvent = async (req, res) => {
-  const event = new Event(req.body);
   try {
-    const newEvent = await event.save();
-    res.status(201).json(newEvent);
+    const event = await Event.findById(req.params.id);
+    if (event) {
+      res.render('events/show', { event, title: event.name }); 
+    } else {
+      const error = {
+        status: 404,
+        stack: 'Event not found'
+      };
+      res.status(404).render('error', { message: 'Event not found', error });
+    }
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    res.status(500).render('error', { message: 'Internal Server Error', error });
   }
 };
+exports.createEvent = async (req, res) => {
+  const { occassion, date, time, venue, guestCount, rsvp, details } = req.body;
+
+  const event = new Event({
+    occassion,
+    date,
+    time,
+    venue,
+    guestCount,
+    rsvp,
+    details
+  });
+
+  try {
+    const newEvent = await event.save();
+    res.redirect('/events'); // Redirect to the events index page after creating the event
+  } catch (error) {
+    res.status(400).render('error', { message: error.message });
+  }
+};
+
 
 exports.updateEvent = async (req, res) => {
   try {
@@ -46,7 +56,7 @@ exports.updateEvent = async (req, res) => {
       res.status(404).render('error', { message: 'Event not found' });
     }
   } catch (error) {
-    res.status(400).json({ message: error.message });
+    res.status(400).render('error', { message: error.message });
   }
 };
 

@@ -2,15 +2,13 @@ const express = require('express');
 const router = express.Router();
 const subscribersCtrl = require('../controllers/subscribers');
 
-// This router is mounted to a "starts with" path of '/subscribers'
-
-// GET /subscribers/new (new functionality)
+// Route to display sign up form
 router.get('/new', subscribersCtrl.new);
 
-// POST /subscribers (create functionality)
+// Route to handle sign up form submission
 router.post('/', subscribersCtrl.create);
 
-// POST /events/:id/subscribers (add subscriber to event functionality)
+// Route to add subscriber to an event
 router.post('/events/:id', subscribersCtrl.addToMember);
 
 module.exports = router;

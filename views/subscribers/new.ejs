@@ -15,4 +15,13 @@
   <input type="submit" value="Add Subscribers">
 </form>
 
+<div>Please Sign In:</div>
+<form id="sign-in-form" action="/auth/signin" method="POST">
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email">
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password">
+  <input type="submit" value="Sign In">
+</form>
+
 <%- include('../partials/footer') %>

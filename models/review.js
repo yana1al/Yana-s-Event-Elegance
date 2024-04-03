@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-const reviewSchema = new mongoose.Schema({
+const reviewSchema = new Schema({
   content: {
     type: String,
     required: true
@@ -11,10 +12,17 @@ const reviewSchema = new mongoose.Schema({
     min: 1,
     max: 5
   },
-  createdAt: {
-    type: Date,
-    default: Date.now
+  event: {
+    type: Schema.Types.ObjectId,
+    ref: 'Event',
+    required: true
+  },
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
   }
+}, {
+  timestamps: true
 });
 
 module.exports = mongoose.model('Review', reviewSchema);

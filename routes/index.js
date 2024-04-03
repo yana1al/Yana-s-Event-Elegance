@@ -1,9 +1,14 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-// This app has no "home" page, but your projects should 😀
-router.get('/', function(req, res, next) {
-  res.redirect('/events');
-});
+// Import route handlers
+const eventsRouter = require('./events');
+const subscribersRouter = require('./subscribers');
+const reviewsRouter = require('./reviews');
+
+// Mount route handlers
+router.use('/events', eventsRouter);
+router.use('/subscribers', subscribersRouter);
+router.use('/reviews', reviewsRouter);
 
 module.exports = router;

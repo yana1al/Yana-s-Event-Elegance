@@ -17,7 +17,7 @@ body {
 
 body > nav {
   grid-area: nav;
-  background-color: #B8C0C2;
+  background-color: purple; /* Change header color to purple */
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -84,6 +84,7 @@ nav > a.active {
 
 table {
   font-size: 20px;
+  margin-top: 20px; /* Add margin-top to push the table up */
 }
 
 table thead th {
@@ -96,7 +97,8 @@ table td {
   text-align: center;
 }
 
-#list td:nth-child(2), #list td:nth-child(3){
+#list td:nth-child(2),
+#list td:nth-child(3) {
   min-width: 100px;
 }
 
@@ -131,7 +133,7 @@ table td {
 }
 
 #add-review-form input[type="submit"],
-#add-performer-form input[type="submit"]  {
+#add-performer-form input[type="submit"] {
   width: 10rem;
   grid-column: 2 / 3;
 }
@@ -163,7 +165,7 @@ hr {
   padding: 0;
   list-style: none;
 }
-	
+
 #show-page li {
   font-weight: bold;
 }

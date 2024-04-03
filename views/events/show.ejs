@@ -1,25 +1,25 @@
 <%- include('../partials/header') %>
 
 <section id="show-page">
-  <div>Occassion: </div>
-  <div><%= event.function %></div>
-  <div>Date: </div>
-  <div><%= event.date %></div>
-  <div>Time: </div>
-  <div><%= event.time %></div>
-  <div>Venue: </div>
-  <div><%= event.venue %></div>
-  <div>Guest Count: </div>
-  <div><%= event.guestCount %></div>
-  <div>Details: </div>
-  <div><%= event.details %></div>
-
-  <div>RSVP: </div>
-  <div><%= event.happeningNow ? 'Yes' : 'No' %></div>
-  <div>Contact Host: </div>
-  <div><%= event.contactHostEmail %> (Email) / <%= event.contactHostPhone %> (Phone)</div>
+  <div>Occasion: <%= event.occasion %></div>
+  <div>Date: <%= event.date %></div>
+  <div>Time: <%= event.time %></div>
+  <div>Venue: <%= event.venue %></div>
+  <div>Guest Count: <%= event.guestCount %></div>
+  <div>Details: <%= event.details %></div>
+  <div>RSVP: 
+    <form id="rsvp-form" action="/events/<%= event._id %>/rsvp" method="POST">
+      <label><input type="radio" name="rsvp" value="going" <%= event.rsvp === 'going' ? 'checked' : '' %>> Going</label>
+      <label><input type="radio" name="rsvp" value="not-going" <%= event.rsvp === 'not-going' ? 'checked' : '' %>> Not Going</label>
+      <label><input type="radio" name="rsvp" value="maybe" <%= event.rsvp === 'maybe' ? 'checked' : '' %>> Maybe</label>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
   
-  <div>Member:</div>
+  <div>Happening Now: <%= event.happeningNow ? 'Yes' : 'No' %></div>
+  <div>Contact Host: <%= event.contactHostEmail %> (Email) / <%= event.contactHostPhone %> (Phone)</div>
+  
+  <div>Members:</div>
   <ul>
     <% event.guests.forEach(function(guest) { %>
       <li><%= guest.name %> <small><%= guest.contactInformation %></small></li>
@@ -52,6 +52,13 @@
 
 <% if (event.reviews.length) { %>
   <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Review</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
     <tbody>
       <% let total = 0 %>
       <% event.reviews.forEach(function(review) { %>
@@ -72,4 +79,4 @@
   <h5>No Reviews Yet</h5>
 <% } %>
 
-<%- include('../partials/footer') %>
+<%-

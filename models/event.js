@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const eventSchema = new Schema({
-  function: {
+  occasion: {
     type: String,
     required: true
   },
@@ -19,12 +19,11 @@ const eventSchema = new Schema({
     required: true
   },
   invite: String,
-  guestCount: Number,
-  details: String,
-  happeningNow: {
-    type: Boolean,
-    default: false
+  guestCount: {
+    type: Number,
+    required: true
   },
+  details: String,
   contactHostEmail: {
     type: String,
     required: true
@@ -33,21 +32,22 @@ const eventSchema = new Schema({
     type: String,
     required: true
   },
+  rsvp: {
+    type: String,
+    enum: ['Going', 'Not Going', 'Maybe'],
+    default: 'Maybe'
+  },
+  happeningNow: {
+    type: Boolean,
+    default: false
+  },
   guests: [{
     name: String,
     contactInformation: String
   }],
   reviews: [{
-    content: String,
-    rating: {
-      type: Number,
-      min: 1,
-      max: 5
-    },
-    createdAt: {
-      type: Date,
-      default: Date.now
-    }
+    type: Schema.Types.ObjectId,
+    ref: 'Review'
   }]
 }, {
   timestamps: true

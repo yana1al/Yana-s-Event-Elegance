@@ -8,24 +8,25 @@
   <title><%= title %></title>
 </head>
 <body>
-  <nav>
-    <img src="/Users/summerway/Desktop/Logo.png" alt="YANA Logo">
-    <a href="/events/new" <%- title === 'New Event' ? 'class="active"' : '' %>>NEW EVENT</a>
-    <a href="/events" <%- title === 'My Events' ? 'class="active"' : '' %>>MY EVENTS</a>
-    <a href="/subscribers/new" <%- title === 'Sign In' ? 'class="active"' : '' %>>SIGN IN</a>
-    <a href="/signup" <%- title === 'Sign Up' ? 'class="active"' : '' %>>SIGN UP</a>
-  </nav>
-  <main>
-    <h1><%= title %></h1>
-    <form action="/signup" method="post">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required><br><br>
-      
-      <label for="phone">Phone Number:</label>
-      <input type="tel" id="phone" name="phone" required><br><br>
-      
-      <button type="submit">Sign Up</button>
-    </form>
-  </main>
+    <nav>
+        <img src="/Users/summerway/Desktop/Logo.png" alt="YANA Logo">
+        <a href="/events/new" <%- title === 'New Event' ? 'class="active"' : '' %>>NEW EVENT</a>
+        <a href="/events" <%- title === 'My Events' ? 'class="active"' : '' %>>MY EVENTS</a>
+        <button id="sign-in-btn">SIGN IN</button> <!-- Added ID to the Sign In button -->
+    </nav>
+    <main>
+        <h1><%= title %></h1>
+    </main>
+
+    <script>
+      // Get the Sign In button element
+      const signInBtn = document.getElementById('sign-in-btn');
+
+      // Add event listener to the Sign In button
+      signInBtn.addEventListener('click', () => {
+          // Redirect the user to the sign-up page when the button is clicked
+          window.location.href = '/signup';
+      });
+    </script>
 </body>
 </html>

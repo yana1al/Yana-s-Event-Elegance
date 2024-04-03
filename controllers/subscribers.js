@@ -1,32 +1,19 @@
 const Subscriber = require('../models/subscriber');
-const Event = require('../models/event');
 
-const subscribersCtrl = {
-    
-    new: (req, res) => {
-      res.render('subscribers/new'); 
-    },
-  
-    
-    create: async (req, res) => {
-      try {
-        
-        res.send('Subscriber created successfully!');
-      } catch (error) {
-        res.status(500).send('Error creating subscriber: ' + error.message);
-      }
-    },
-  
-    
-    addToMember: async (req, res) => {
-      try {
-        
-        res.send('Subscriber added to event successfully!');
-      } catch (error) {
-        res.status(500).send('Error adding subscriber to event: ' + error.message);
-      }
-    }
-  };
-  
-  
-  module.exports = subscribersCtrl;
+exports.new = (req, res) => {
+  res.render('subscribers/new', { title: 'Sign Up' });
+};
+
+exports.create = async (req, res) => {
+  const subscriber = new Subscriber(req.body);
+  try {
+    const newSubscriber = await subscriber.save();
+    res.status(201).json(newSubscriber);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+};
+
+exports.addToMember = async (req, res) => {
+  // Logic to add subscriber to event
+};

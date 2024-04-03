@@ -1,35 +1,59 @@
-<%- include('../partials/header') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <title>Add New Event</title>
+</head>
+<body>
+  <% include('../partials/header') %>
 
-<form id="new-form" action="/movies" method="POST">
-  <label>Occassion:</label>
-  <input type="text" name="function">
-  <label>Date:</label>
-  <input type="date" name="date">
-  <label>Time:</label>
-  <input type="time" name="time">
-  <label>Venue:</label>
-  <input type="text" name="venue">
-  <label>Invite:</label>
-  <input type="text" name="invite">
-  <label>Guest Count:</label>
-  <input type="number" name="guestCount">
-  <label>Details:</label>
-  <input type="text" name="details">
-  
-  <label>Contact Host (Email):</label>
-  <input type="email" name="contactHostEmail" required>
-  <label>Contact Host (Phone):</label>
-  <input type="tel" name="contactHostPhone" required>
-  
-  <label>RSVP:</label>
-  <select name="RSVP">
-    <option value="Going">Going</option>
-    <option value="Not Going">Not Going</option>
-    <option value="May be">May be</option>
-  </select>
-  <label>Happening Now:</label>
-  <input type="checkbox" name="happeningNow" checked>
-  <input type="submit" value="Add Event">
-</form>
+  <section id="new-event">
+    <h2>Add New Event</h2>
+    <form id="new-form" action="/events" method="POST">
+      <label for="occasion">Occasion:</label>
+      <input type="text" id="occasion" name="occasion" required>
+      
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" required>
+      
+      <label for="time">Time:</label>
+      <input type="time" id="time" name="time" required>
+      
+      <label for="venue">Venue:</label>
+      <input type="text" id="venue" name="venue" required>
+      
+      <label for="invite">Invite:</label>
+      <input type="text" id="invite" name="invite">
+      
+      <label for="guestCount">Guest Count:</label>
+      <input type="number" id="guestCount" name="guestCount" required>
+      
+      <label for="details">Details:</label>
+      <textarea id="details" name="details"></textarea>
+      
+      <label for="contactHostEmail">Contact Host (Email):</label>
+      <input type="email" id="contactHostEmail" name="contactHostEmail" required>
+      
+      <label for="contactHostPhone">Contact Host (Phone):</label>
+      <input type="tel" id="contactHostPhone" name="contactHostPhone" required>
+      
+      <label for="rsvp">RSVP:</label>
+      <select id="rsvp" name="rsvp">
+        <option value="Going">Going</option>
+        <option value="Not Going">Not Going</option>
+        <option value="Maybe">Maybe</option>
+      </select>
+      
+      <label for="happeningNow">Happening Now:</label>
+      <input type="checkbox" id="happeningNow" name="happeningNow" checked>
+      
+      <button type="submit">Add Event</button>
+    </form>
+  </section>
 
-<%- include('../partials/footer') %>
+  <% include('../partials/footer') %>
+</body>
+</html>

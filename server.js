@@ -12,6 +12,7 @@ const indexRouter = require('./routes/index');
 const eventsRouter = require('./routes/events');
 const reviewsRouter = require('./routes/reviews');
 const subscribersRouter = require('./routes/subscribers');
+const authRouter = require('./routes/auth');
 
 
 var app = express();
@@ -28,8 +29,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/events', eventsRouter);
-app.use('/', reviewsRouter);
-app.use('/', subscribersRouter);
+app.use('/reviews', reviewsRouter); // Mount reviewsRouter at '/reviews' path
+app.use('/subscribers', subscribersRouter); // Mount subscribersRouter at '/subscribers' path
+app.use('/auth', authRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

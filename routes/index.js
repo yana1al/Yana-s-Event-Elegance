@@ -12,9 +12,9 @@ router.use('/subscribers', subscribersRouter);
 router.use('/reviews', reviewsRouter);
 
 // Mount home page route
-router.use('/home', (req, res) => {
+router.use('/', (req, res) => {
     
-    res.render('home'); 
+    res.render('home', {title: 'Please Sign Up Here'}); 
 });
 
 module.exports = router;

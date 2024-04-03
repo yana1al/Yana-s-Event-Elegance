@@ -1,20 +1,5 @@
 <%- include('../partials/header') %>
 
-<div>Please Sign Up:</div>
-<section id="badge-container">
-  <% subscribers.forEach(function(s) { %>
-    <article class="badge"><%= s.name %></article>
-  <% }) %>
-</section>
-
-<form id="add-subscriber-form" action="/subscribers" method="POST">
-  <label for="name">Name:</label>
-  <input type="text" id="name" name="name">
-  <label for="contactInformation">Contact Information (Email/Phone Number):</label>
-  <input type="text" id="contactInformation" name="contactInformation">
-  <input type="submit" value="Add Subscribers">
-</form>
-
 <div>Please Sign In:</div>
 <form id="sign-in-form" action="/auth/signin" method="POST">
   <label for="email">Email:</label>

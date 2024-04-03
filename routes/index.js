@@ -11,4 +11,10 @@ router.use('/events', eventsRouter);
 router.use('/subscribers', subscribersRouter);
 router.use('/reviews', reviewsRouter);
 
+// Mount home page route
+router.use('/home', (req, res) => {
+    
+    res.render('home'); 
+});
+
 module.exports = router;

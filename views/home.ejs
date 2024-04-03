@@ -1,0 +1,31 @@
+<%- include('../partials/header') %>
+
+<div>Please Sign Up:</div>
+
+<form id="add-subscriber-form" action="/subscribers" method="POST">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name">
+  <label for="contactInformation">Contact Information (Email/Phone Number):</label>
+  <input type="text" id="contactInformation" name="contactInformation">
+  <input type="submit" value="Sign Up">
+</form>
+
+<div>App Demo:</div>
+<div>
+  <h2>Plan Your Events with Ease</h2>
+  <p>Our event planner app simplifies the process of organizing and managing events. Whether it's a birthday party, wedding, conference, or any other special occasion, our app has you covered.</p>
+  <img src="/images/event-planner-demo.png" alt="Event Planner Demo" style="width: 100%;">
+</div>
+<div>
+  <h2>Key Features:</h2>
+  <ul>
+    <li>Easy Event Creation: Quickly create new events with customizable details such as occasion, date, time, venue, and guest list.</li>
+    <li>Guest Management: Keep track of RSVPs, invite guests, and manage attendee lists effortlessly.</li>
+    <li>Task Management: Stay organized with task lists, reminders, and deadlines for event planning tasks.</li>
+    <li>Vendor Management: Collaborate with vendors, manage contracts, and track payments within the app.</li>
+    <li>Budget Tracking: Set and monitor budgets for different aspects of your event, with expense tracking and budget summaries.</li>
+    <li>Interactive Dashboard: Get a visual overview of your upcoming events, tasks, budget status, and more on the dashboard.</li>
+  </ul>
+</div>
+
+

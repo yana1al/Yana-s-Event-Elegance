@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
   font-family: Helvetica;
-  color: #424748;
+  color: black;
 }
 
 body {
@@ -12,12 +12,12 @@ body {
   grid-template-areas: 
     "nav"
     "main";
-  background-color: #d0caca; 
+  background-color: #8154cf; 
 }
 
 body > nav {
   grid-area: nav;
-  background-color: purple; /* Change header color to purple */
+  background-color: rgb(97, 79, 237); /* Change header color to purple */
   display: flex;
   justify-content: flex-end;
   align-items: center;

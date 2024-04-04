@@ -2,7 +2,7 @@
   box-sizing: border-box;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-style: inherit;
-  padding-bottom: 10px;
+  padding: 5px;
   color: rgb(7, 3, 1);
 }
 
@@ -33,7 +33,7 @@ body > nav {
 }
 
 nav > img {
-  width: 34px;
+  width: 60px;
   object-fit: contain;
   margin-right: auto;
 }
@@ -218,11 +218,6 @@ footer {
 }
 
 
-#signin-container {
-  background-image: url('eventBackground.jpeg');
-  background-size: cover;
-  
-}
 
 
 

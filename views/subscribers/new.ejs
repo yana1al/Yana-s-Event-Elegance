@@ -1,36 +1,36 @@
-<div id="signin-container" style="margin-top: 200px; text-align: center;">
-  <div>Please Sign In:</div>
-  <form id="sign-in-form" action="/auth/login" method="POST">
-    <div style="margin-bottom: 10px;">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
+<div id="new-form" style="background-image: url('eventBackground.jpeg'); background-size: cover;">
+  <div id="signin-container" style="margin-top: 200px; text-align: center;">
+    <div>Please Sign In:</div>
+    <form id="sign-in-form" action="/auth/login" method="POST">
+      <div style="margin-bottom: 10px;">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div style="margin-bottom: 10px;">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <input type="submit" value="Sign In">
+    </form>
+    <div style="margin-top: 20px;">
+      Don't have an account? <a href="#" id="signup-link">Sign Up</a>
     </div>
-    <div style="margin-bottom: 10px;">
+  </div>
+
+  <div id="signup-container" style="display: none; margin-top: 200px; text-align: center;">
+    <div>Please Sign Up:</div>
+    <form id="add-subscriber-form" action="/subscribers" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="contactInformation">Contact Information (Email/Phone Number):</label>
+      <input type="text" id="contactInformation" name="contactInformation" required>
       <label for="password">Password:</label>
       <input type="password" id="password" name="password" required>
+      <input type="submit" value="Sign Up">
+    </form>
+    <div style="margin-top: 20px;">
+      Already have an account? <a href="#" id="signin-link">Sign In</a>
     </div>
-    <input type="submit" value="Sign In">
-  </form>
-
-  <div style="margin-top: 20px;">
-    Don't have an account? <a href="#" id="signup-link">Sign Up</a>
-  </div>
-</div>
-
-<div id="signup-container" style="display: none; margin-top: 200px; text-align: center;">
-  <div>Please Sign Up:</div>
-  <form id="add-subscriber-form" action="/subscribers" method="POST">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
-    <label for="contactInformation">Contact Information (Email/Phone Number):</label>
-    <input type="text" id="contactInformation" name="contactInformation" required>
-    <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
-    <input type="submit" value="Sign Up">
-  </form>
-
-  <div style="margin-top: 20px;">
-    Already have an account? <a href="#" id="signin-link">Sign In</a>
   </div>
 </div>
 

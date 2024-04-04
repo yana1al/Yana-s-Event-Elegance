@@ -1,6 +1,7 @@
 * {
-  box-sizing: content-box;
+  box-sizing: border-box;
   font-family: Helvetica;
+  padding-bottom: 10px;
   color: rgb(7, 3, 1);
 }
 

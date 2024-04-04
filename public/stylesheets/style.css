@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
-  font-family: Helvetica;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-style: inherit;
   padding-bottom: 10px;
   color: rgb(7, 3, 1);
 }
@@ -16,8 +17,8 @@ body {
 }
 
 html {
-  background-image: url('eventBackground.jpeg');
-  background-size: contain;
+  background-image: url('backgroundImage.jpeg');
+  background-size: 100%;
   background-position: center;
 }
 
@@ -42,7 +43,7 @@ body > main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30px;
+  padding: 20px;
   overflow-y: scroll;
 }
 
@@ -215,3 +216,13 @@ footer {
 #emailField input, #phoneField input {
   padding: 5px;
 }
+
+
+#signin-container {
+  background-image: url('eventBackground.jpeg');
+  background-size: cover;
+  
+}
+
+
+

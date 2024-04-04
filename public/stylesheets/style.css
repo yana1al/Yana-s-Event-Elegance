@@ -33,7 +33,7 @@ body > nav {
 }
 
 nav > img {
-  width: 60px;
+  width: 80px;
   object-fit: contain;
   margin-right: auto;
 }
@@ -218,6 +218,10 @@ footer {
 }
 
 
+.image-container {
+  display: flex;
+  justify-content:center;
+}
 
 
 

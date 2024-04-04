@@ -1,6 +1,7 @@
 <%- include('../partials/header') %>
 
 <section id="event-list">
+  <h2>Current Events</h2>
   <table>
     <thead>
       <tr>
@@ -12,7 +13,7 @@
       </tr>
     </thead>
     <tbody>
-      <% events.forEach(function(event) { %> 
+      <% events.current.forEach(function(event) { %> 
         <tr>
           <td><%= event.occasion %></td>
           <td><%= event.date %></td>
@@ -24,6 +25,63 @@
             <form action="/events/<%= event._id %>?_method=DELETE" method="POST" style="display:inline;">
               <button type="submit">DELETE</button> 
             </form>
+          </td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+
+  <h2>Upcoming Events</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Occasion</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Venue</th>
+        <th>Actions</th> 
+      </tr>
+    </thead>
+    <tbody>
+      <% events.upcoming.forEach(function(event) { %> 
+        <tr>
+          <td><%= event.occasion %></td>
+          <td><%= event.date %></td>
+          <td><%= event.time %></td>
+          <td><%= event.venue %></td>
+          <td class="actions">
+            <a href="/events/<%= event._id %>">DETAILS</a> 
+            <a href="/events/<%= event._id %>/edit">EDIT</a> 
+            <form action="/events/<%= event._id %>?_method=DELETE" method="POST" style="display:inline;">
+              <button type="submit">DELETE</button> 
+            </form>
+          </td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+
+  <h2>Past Events</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Occasion</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Venue</th>
+        <th>Actions</th> 
+      </tr>
+    </thead>
+    <tbody>
+      <% events.past.forEach(function(event) { %> 
+        <tr>
+          <td><%= event.occasion %></td>
+          <td><%= event.date %></td>
+          <td><%= event.time %></td>
+          <td><%= event.venue %></td>
+          <td class="actions">
+            <a href="/events/<%= event._id %>">DETAILS</a> 
+            
           </td>
         </tr>
       <% }); %>

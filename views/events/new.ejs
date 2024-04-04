@@ -1,9 +1,10 @@
 
-  <% include('../partials/header') %>
+<%- include('../partials/header') %>
 
-  <section id="new-event">
-    <h2>Add New Event</h2>
-    <form id="new-form" action="/events" method="POST">
+<section id="new-event">
+  <h2>Add New Event</h2>
+  <form id="new-form" action="/events" method="POST">
+    
       <label for="occasion">Occasion:</label>
       <input type="text" id="occasion" name="occasion" required>
       
@@ -25,25 +26,42 @@
       <label for="details">Details:</label>
       <textarea id="details" name="details"></textarea>
       
-      <label for="contactHostEmail">Contact Host (Email):</label>
-      <input type="email" id="contactHostEmail" name="contactHostEmail" required>
+      <label for="contactHost">Contact Host:</label>
+    <select id="contactHost" name="contactHost">
+      <option value="email">Email</option>
+      <option value="phone">Phone Number</option>
+    </select>
+    
+    <div id="contactFields" style="display: grid; grid-template-columns: 1fr 1fr; grid-gap: 10px;">
+      <div id="emailField">
+        <label for="contactHostEmail">Email:</label>
+        <input type="email" id="contactHostEmail" name="contactHostEmail" placeholder="Enter Email Address" required>
+      </div>
+    
+      <div id="phoneField">
+        <label for="contactHostPhone">Phone Number:</label>
+        <input type="tel" id="contactHostPhone" name="contactHostPhone" placeholder="Enter Phone Number" required>
+      </div>
+    
+    
       
-      <label for="contactHostPhone">Contact Host (Phone):</label>
-      <input type="tel" id="contactHostPhone" name="contactHostPhone" required>
       
-      <label for="rsvp">RSVP:</label>
-      <select id="rsvp" name="rsvp">
-        <option value="Going">Going</option>
-        <option value="Not Going">Not Going</option>
-        <option value="Maybe">Maybe</option>
-      </select>
-      
-      <label for="happeningNow">Happening Now:</label>
-      <input type="checkbox" id="happeningNow" name="happeningNow" checked>
-      
-      <button type="submit">Add Event</button>
-    </form>
-  </section>
+      <input type="hidden" id="initialRsvp" name="initialRsvp" value="">
+    
+    <!-- RSVP section for guests -->
+    <label for="rsvp">RSVP:</label>
+    <select id="rsvp" name="rsvp">
+      <option value="Going">Going</option>
+      <option value="Not Going">Not Going</option>
+      <option value="Maybe">Maybe</option>
+    </select>
+    
+    <label for="happeningNow">Happening Now:</label>
+    <input type="checkbox" id="happeningNow" name="happeningNow" checked>
+    
+    <button type="submit">Add Event</button>
+  </form>
+</section>
 
-  <% include('../partials/footer') %>
+<%- include('../partials/footer') %>
 

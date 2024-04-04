@@ -7,17 +7,21 @@
   <div>Venue: <%= event.venue %></div>
   <div>Guest Count: <%= event.guestCount %></div>
   <div>Details: <%= event.details %></div>
-  <div>RSVP: 
-    <form id="rsvp-form" action="/events/<%= event._id %>/rsvp" method="POST">
-      <label><input type="radio" name="rsvp" value="going" <%= event.rsvp === 'going' ? 'checked' : '' %>> Going</label>
-      <label><input type="radio" name="rsvp" value="not-going" <%= event.rsvp === 'not-going' ? 'checked' : '' %>> Not Going</label>
-      <label><input type="radio" name="rsvp" value="maybe" <%= event.rsvp === 'maybe' ? 'checked' : '' %>> Maybe</label>
-      <input type="submit" value="Submit">
-    </form>
-  </div>
   
+  <!-- RSVP section for guests -->
+  <div>
+    <label for="rsvp">RSVP:</label>
+    <select id="rsvp" name="rsvp">
+      <option value="going" <%= event.rsvp === 'going' ? 'selected' : '' %>>Going</option>
+      <option value="not-going" <%= event.rsvp === 'not-going' ? 'selected' : '' %>>Not Going</option>
+      <option value="maybe" <%= event.rsvp === 'maybe' ? 'selected' : '' %>>Maybe</option>
+    </select>
+    <button onclick="updateRSVP()">Update RSVP</button>
+  </div>
+
   <div>Happening Now: <%= event.happeningNow ? 'Yes' : 'No' %></div>
-  <div>Contact Host: <%= event.contactHostEmail %> (Email) / <%= event.contactHostPhone %> (Phone)</div>
+  
+  <div>Contact Host (Phone): <%= event.contactHostPhone %></div>
   
   <div>Members:</div>
   <ul>
@@ -80,3 +84,15 @@
 <% } %>
 
 <%- include('../partials/footer') %>
+
+<script>
+  // Function to update RSVP status
+  function updateRSVP() {
+    const rsvpSelect = document.getElementById('rsvp');
+    const selectedOption = rsvpSelect.options[rsvpSelect.selectedIndex].value;
+    // Use AJAX or form submission to send the selected option to the server for updating the RSVP status
+    // You can implement this part based on your server-side logic
+    // For simplicity, I'll just log the selected option here
+    console.log('RSVP status updated to:', selectedOption);
+  }
+</script>

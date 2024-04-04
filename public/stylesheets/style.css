@@ -1,5 +1,5 @@
 * {
-  box-sizing: border-box;
+  box-sizing: content-box;
   font-family: Helvetica;
   color: rgb(7, 3, 1);
 }
@@ -15,19 +15,19 @@ body {
 }
 
 html {
-  background-image: url('/eventP.jpg');
-  background-size: 30%;
-  background-position: top;
+  background-image: url('eventBackground.jpeg');
+  background-size: contain;
+  background-position: center;
 }
 
 body > nav {
   grid-area: nav;
-  background-color: rgb(129, 62, 218);
+  background-color: rgb(187, 155, 228);
   display: flex;
-  justify-content: flex-end;
+  justify-content: first baseline;
   align-items: center;
-  padding: 0 20px;
-  border-bottom: 1px solid rgb(174, 170, 178);
+  padding: 0 40px;
+  border-bottom: 5px solid rgb(174, 170, 178);
 }
 
 nav > img {
@@ -41,7 +41,7 @@ body > main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: 30px;
   overflow-y: scroll;
 }
 
@@ -58,78 +58,61 @@ nav > a:hover:not(.active) {
 }
 
 nav > a.active {
-  color: white;
+  color: rgb(195, 202, 218);
   cursor: default;
 }
 
-#new-form, #add-review-form, #add-performer-form {
+#new-form, #add-review-form {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(2, minmax(auto, 22rem));
+  align-items: center;
 }
 
-#new-form *,
-#add-review-form *,
-#add-performer-form * {
-  font-size: 20px;
-  padding: 5px;
-  border-radius: 5px;
-}
 
 #new-form input[type="submit"] {
   grid-column: span 2;
   width: 10rem;
 }
 
+#event-list {
+  display: grid;
+}
+
 table {
-  font-size: 20px;
-  margin-top: 20px;
+  width: 100%;
 }
 
-table thead th {
-  padding: 5px;
-  border-bottom: 2px solid #424748;
+.actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 5px;
 }
 
-table td {
-  padding: 10px;
+.actions a,
+.actions button {
   text-align: center;
+  padding: 5px;
+  background-color: #ddd;
+  border: none;
+  cursor: pointer;
 }
 
-#list td:nth-child(2),
-#list td:nth-child(3) {
-  min-width: 100px;
-}
-
-#list a {
-  border-radius: 4px;
-  background-color: #B8C0C2;
-  padding: 4px;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-#list a:hover {
-  background-color: white;
-}
 
 #show-page {
   display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
-#show-page div:nth-child(even) {
-  font-weight: bold;
+.event-details {
+  grid-column: span 2;
 }
 
-#add-review-form, #add-performer-form {
-  margin-bottom: 2rem;
-}
-
-#add-review-form input[type="submit"],
-#add-performer-form input[type="submit"] {
-  width: 10rem;
+.actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
 }
 
 hr {
@@ -210,4 +193,24 @@ footer {
 
 .signup-signin-section {
   flex: 1;
+}
+
+
+#contactFields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+#emailField, #phoneField {
+  display: flex;
+  flex-direction: column;
+}
+
+#emailField label, #phoneField label {
+  margin-bottom: 5px;
+}
+
+#emailField input, #phoneField input {
+  padding: 5px;
 }

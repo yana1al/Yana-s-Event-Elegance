@@ -10,19 +10,20 @@
 </head>
 <body>
     <nav>
-        <img src="/Users/summerway/Desktop/Logo.png" alt="YANA Logo">
-        <a href="/subscribers/new" <%- title === 'Sign In' ? 'class="active"' : '' %>>
-          SIGN IN</a>
+      <img src="/stylesheets/Logo.png" alt="YANA Logo" />
+
+       
         
         <a href="/events/new" <%- title === 'New Event' ? 'class="active"' : '' %>>CREATE EVENT</a>
         <a href="/events" <%- title === 'My Events' ? 'class="active"' : '' %>>MY EVENTS</a>
+        <a href="/subscribers/new" <%- title === 'Sign In' ? 'class="active"' : '' %>>
+          SIGN IN</a>
         
-        
-            <a href="/logout">LOG OUT</a>
+          <a href="/logout" id="logout-link">LOG OUT</a>
        
     </nav>
     <main>
-        <h1><%= title %></h1>
+        
     </main>
     <script src="/js/client.js"></script>
 </body>

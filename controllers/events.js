@@ -11,18 +11,15 @@ exports.getAllEvents = async (req, res) => {
 
 exports.getEventById = async (req, res) => {
   try {
-    const event = await Event.findById(req.params.id);
-    if (event) {
-      res.render('events/show', { event, title: event.name }); 
-    } else {
-      const error = {
-        status: 404,
-        stack: 'Event not found'
-      };
-      res.status(404).render('error', { message: 'Event not found', error });
+    const eventId = req.params.id;
+    const event = await Event.findById(eventId);
+    if (!event) {
+      return res.status(404).json({ error: 'Event not found' });
     }
+    res.render('show', { event }); // Assuming you're rendering a 'show' view
   } catch (error) {
-    res.status(500).render('error', { message: 'Internal Server Error', error });
+    console.error('Error fetching event by ID:', error);
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 };
 exports.createEvent = async (req, res) => {

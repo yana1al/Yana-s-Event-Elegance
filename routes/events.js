@@ -17,7 +17,7 @@ const events = [
     {
       id: 2,
       occasion: 'Wedding',
-      date: '2024-03-15',
+      date: '2024-04-15',
       time: '15:00',
       venue: '456 Elm Street',
       
@@ -48,6 +48,7 @@ router.get('/', (req, res) => {
 
 
 router.get('/:id', eventsCtrl.getEventById);
+
 
 
 

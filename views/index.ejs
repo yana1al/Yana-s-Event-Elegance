@@ -1,98 +1,107 @@
 <%- include('./partials/header', { title: 'Welcome' }) %>
 
+
 <h2>All Events</h2>
 
-
-
 <section id="event-list">
-  <h2>Current Events</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Occasion</th>
-        <th>Date</th>
-        <th>Time</th>
-        <th>Venue</th>
-        <th>Actions</th> 
-      </tr>
-    </thead>
-    <tbody>
-      <% events.current.forEach(function(event) { %> 
+  <div>
+    <h2>Current Events</h2>
+    <table>
+      <thead>
         <tr>
-          <td><%= event.occasion %></td>
-          <td><%= event.date %></td>
-          <td><%= event.time %></td>
-          <td><%= event.venue %></td>
-          <td class="actions">
-            <a href="/events/<%= event._id %>">DETAILS</a> 
-            <a href="/events/<%= event._id %>/edit">EDIT</a> 
-            <form action="/events/<%= event._id %>?_method=DELETE" method="POST" style="display:inline;">
-              <button type="submit">DELETE</button> 
-            </form>
-          </td>
+          <th>Occasion</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Venue</th>
+          <th>Actions</th> 
         </tr>
-      <% }); %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% events.current.forEach(function(event) { %> 
+          <tr>
+            <td><%= event.occasion %></td>
+            <td><%= event.date %></td>
+            <td><%= event.time %></td>
+            <td><%= event.venue %></td>
+            <td class="actions">
+              <a href="/events/<%= event._id %>">DETAILS</a> 
+              <a href="/events/<%= event._id %>/edit">EDIT</a> 
+              <form action="/events/<%= event._id %>?_method=DELETE" method="POST" style="display:inline;">
+                <button type="submit">DELETE</button> 
+              </form>
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
 
-  <h2>Upcoming Events</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Occasion</th>
-        <th>Date</th>
-        <th>Time</th>
-        <th>Venue</th>
-        <th>Actions</th> 
-      </tr>
-    </thead>
-    <tbody>
-      <% events.upcoming.forEach(function(event) { %> 
+  <div>
+    <h2>Upcoming Events</h2>
+    <table>
+      <thead>
         <tr>
-          <td><%= event.occasion %></td>
-          <td><%= event.date %></td>
-          <td><%= event.time %></td>
-          <td><%= event.venue %></td>
-          <td class="actions">
-            <a href="/events/<%= event._id %>">DETAILS</a> 
-            <a href="/events/<%= event._id %>/edit">EDIT</a> 
-            <form action="/events/<%= event._id %>?_method=DELETE" method="POST" style="display:inline;">
-              <button type="submit">DELETE</button> 
-            </form>
-          </td>
+          <th>Occasion</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Venue</th>
+          <th>RSVP</th>
+          <th>Actions</th> 
         </tr>
-      <% }); %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% events.upcoming.forEach(function(event) { %> 
+          <tr>
+            <td><%= event.occasion %></td>
+            <td><%= event.date %></td>
+            <td><%= event.time %></td>
+            <td><%= event.venue %></td>
+            <td class="rsvp-options">
+              <label><input type="radio" name="<%= event._id %>-rsvp" value="going"> Going</label>
+              <label><input type="radio" name="<%= event._id %>-rsvp" value="not-going"> Not Going</label>
+              <label><input type="radio" name="<%= event._id %>-rsvp" value="maybe"> Maybe</label>
+            </td>
+            <td class="actions">
+              <a href="/events/<%= event._id %>">DETAILS</a> 
+              <a href="/events/<%= event._id %>/edit">EDIT</a> 
+              <form action="/events/<%= event._id %>?_method=DELETE" method="POST" style="display:inline;">
+                <button type="submit">DELETE</button> 
+              </form>
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
 
-  <h2>Past Events</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Occasion</th>
-        <th>Date</th>
-        <th>Time</th>
-        <th>Venue</th>
-        <th>Actions</th> 
-      </tr>
-    </thead>
-    <tbody>
-      <% events.past.forEach(function(event) { %> 
+  <div>
+    <h2>Past Events</h2>
+    <table>
+      <thead>
         <tr>
-          <td><%= event.occasion %></td>
-          <td><%= event.date %></td>
-          <td><%= event.time %></td>
-          <td><%= event.venue %></td>
-          <td class="actions">
-            <a href="/events/<%= event._id %>">DETAILS</a> 
-            
-          </td>
+          <th>Occasion</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Venue</th>
+          <th>Actions</th> 
         </tr>
-      <% }); %>
-    </tbody>
-  </table>
+      </thead>
+      <tbody>
+        <% events.past.forEach(function(event) { %> 
+          <tr>
+            <td><%= event.occasion %></td>
+            <td><%= event.date %></td>
+            <td><%= event.time %></td>
+            <td><%= event.venue %></td>
+            <td class="actions">
+              <a href="/events/<%= event._id %>">DETAILS</a> 
+              
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
 </section>
-
-
 
 <%- include('./partials/footer') %>

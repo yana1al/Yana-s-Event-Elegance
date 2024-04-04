@@ -77,27 +77,41 @@ nav > a.active {
   width: 10rem;
 }
 
+/* Add these styles to your CSS file */
+
 #event-list {
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
 }
 
 table {
   width: 100%;
+  border-collapse: collapse;
 }
 
-.actions {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 5px;
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
 }
 
-.actions a,
-.actions button {
-  text-align: center;
-  padding: 5px;
-  background-color: #ddd;
-  border: none;
-  cursor: pointer;
+th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+
+.actions a {
+  margin-right: 10px;
+}
+
+.rsvp-options {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.rsvp-options label {
+  margin-right: 10px;
 }
 
 

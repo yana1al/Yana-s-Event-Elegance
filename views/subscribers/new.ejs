@@ -1,21 +1,90 @@
-<div id="new-form" style="background-image: url('eventBackground.jpeg'); background-size: cover;">
-  <div id="signin-container" style="margin-top: 200px; text-align: center;">
+<%- include('../partials/header') %>
+<style>
+  #new-form {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  #signin-container {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  #signin-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #signin-container form div {
+    margin-bottom: 20px;
+  }
+
+  #signin-container form input[type="email"],
+  #signin-container form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+
+  #signin-container form input[type="submit"],
+  #signin-container form button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0073b1;
+    color: white;
+    cursor: pointer;
+  }
+
+  #signin-container form input[type="submit"]:hover,
+  #signin-container form button:hover {
+    background-color: #005f91;
+  }
+
+  #signin-container form div:last-child {
+    margin-top: 30px;
+  }
+
+  #signin-container form div:last-child a {
+    color: #0073b1;
+    text-decoration: none;
+  }
+
+  #signin-container form div:last-child a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+<div id="new-form">
+  <div id="signin-container">
     <div>Please Sign In:</div>
     <form id="sign-in-form" action="/auth/login" method="POST">
-      <div style="margin-bottom: 10px;">
+      <div>
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
       </div>
-      <div style="margin-bottom: 10px;">
+      <div>
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
       </div>
       <input type="submit" value="Sign In">
+      <div><button id="logout-button">Logout</button></div>
     </form>
-    <div style="margin-top: 20px;">
+    <div>
       Don't have an account? <a href="#" id="signup-link">Sign Up</a>
     </div>
   </div>
+</div>
+
 
   <div id="signup-container" style="display: none; margin-top: 200px; text-align: center;">
     <div>Please Sign Up:</div>
@@ -32,7 +101,8 @@
       Already have an account? <a href="#" id="signin-link">Sign In</a>
     </div>
   </div>
-</div>
+  
+  
 
 <%- include('../partials/footer') %>
 
@@ -47,5 +117,26 @@
     event.preventDefault();
     document.getElementById('signin-container').style.display = 'none';
     document.getElementById('signup-container').style.display = 'block';
+  });
+
+  // Add event listener for logout button
+  document.getElementById('logout-button').addEventListener('click', function(event) {
+    event.preventDefault();
+    // Send logout request to the server
+    fetch('/auth/logout', {
+      method: 'POST'
+    })
+    .then(response => {
+      if (response.ok) {
+        // Redirect user to login page or perform any other action after successful logout
+        window.location.href = '/login'; // Change the URL to your login page
+      } else {
+        // Handle error
+        console.error('Logout failed');
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
   });
 </script>

@@ -82,7 +82,7 @@ nav > a.active {
 #event-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 20px;
+  grid-gap: 15px;
 }
 
 table {
@@ -107,18 +107,18 @@ th {
 .rsvp-options {
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 .rsvp-options label {
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 
 #show-page {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  grid-template-columns: 0.5fr 0.5fr;
+  gap: 10px;
 }
 
 .event-details {
@@ -127,8 +127,8 @@ th {
 
 .actions {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 0fr));
+  gap: 1.5px;
 }
 
 hr {

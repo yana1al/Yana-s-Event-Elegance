@@ -1,0 +1,31 @@
+<%- include('./partials/header', { title: 'Edit Event' }) %>
+
+<section id="edit-event">
+  <h2>Edit Event</h2>
+  <form action="/events/<%= event._id %>?_method=PUT" method="POST">
+    <!-- Form fields for editing event details -->
+    <label for="occasion">Occasion:</label>
+    <input type="text" id="occasion" name="occasion" value="<%= event.occasion %>">
+    
+    <!-- Additional form fields -->
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" value="<%= event.date %>">
+    
+    <label for="time">Time:</label>
+    <input type="time" id="time" name="time" value="<%= event.time %>">
+    
+    <label for="venue">Venue:</label>
+    <input type="text" id="venue" name="venue" value="<%= event.venue %>">
+    
+    <label for="details">Details:</label>
+    <textarea id="details" name="details"><%= event.details %></textarea>
+    
+    <!-- Example: -->
+    <!-- <label for="date">Date:</label>
+    <input type="date" id="date" name="date" value="<%= event.date %>"> -->
+    
+    <button type="submit">Update Event</button>
+  </form>
+</section>
+
+<%- include('./partials/footer') %>

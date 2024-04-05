@@ -66,7 +66,7 @@
 
 <div id="new-form">
   <div id="signin-container">
-    <div>Please Sign In:</div>
+    <div>Rejoin Here :</div>
     <form id="sign-in-form" action="/auth/login" method="POST">
       <div>
         <label for="email">Email:</label>
@@ -80,14 +80,13 @@
       <div><button id="logout-button">Logout</button></div>
     </form>
     <div>
-      Don't have an account? <a href="#" id="signup-link">Sign Up</a>
+      Don't have an account? <a href="#" id="signup-link">Please Enroll</a>
     </div>
   </div>
-</div>
 
 
   <div id="signup-container" style="display: none; margin-top: 200px; text-align: center;">
-    <div>Please Sign Up:</div>
+    <div>Enroll Here:</div>
     <form id="add-subscriber-form" action="/subscribers" method="POST">
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" required>
@@ -98,7 +97,7 @@
       <input type="submit" value="Sign Up">
     </form>
     <div style="margin-top: 20px;">
-      Already have an account? <a href="#" id="signin-link">Sign In</a>
+      Already have an account? <a href="#" id="signin-link">Rejoin</a>
     </div>
   </div>
   
@@ -122,7 +121,7 @@
   // Add event listener for logout button
   document.getElementById('logout-button').addEventListener('click', function(event) {
     event.preventDefault();
-    // Send logout request to the server
+    
     fetch('/auth/logout', {
       method: 'POST'
     })

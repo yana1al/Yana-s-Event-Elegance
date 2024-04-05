@@ -1,6 +1,6 @@
 const Event = require('../models/event');
 
-// Get all events
+
 exports.getAllEvents = async (req, res) => {
   try {
     const events = await Event.find();
@@ -11,7 +11,7 @@ exports.getAllEvents = async (req, res) => {
   }
 };
 
-// Get an event by ID
+
 exports.getEventById = async (req, res) => {
   try {
     const eventId = req.params.id;
@@ -26,9 +26,9 @@ exports.getEventById = async (req, res) => {
   }
 };
 
-// Create a new event
+
 exports.createEvent = async (req, res) => {
-  // Validate input data
+  
   const { occasion, date, time, venue, guestCount, rsvp, details } = req.body;
   if (!occasion || !date || !time || !venue) {
     return res.status(400).render('error', { message: 'Occasion, date, time, and venue are required' });
@@ -45,7 +45,7 @@ exports.createEvent = async (req, res) => {
   });
 
   try {
-    // Save the new event
+    
     const newEvent = await event.save();
     res.redirect('/events'); 
   } catch (error) {
@@ -54,10 +54,10 @@ exports.createEvent = async (req, res) => {
   }
 };
 
-// Update an event
+
 exports.updateEvent = async (req, res) => {
   try {
-    // Update the event with new data
+    
     const updatedEvent = await Event.findByIdAndUpdate(req.params.id, req.body, { new: true });
     if (updatedEvent) {
       res.render('events/show', { event: updatedEvent }); 
@@ -73,13 +73,13 @@ exports.updateEvent = async (req, res) => {
 exports.deleteEvent = (req, res) => {
   const eventId = req.params.id;
   
-  // Find the index of the event in the events array
+  
   const eventIndex = events.findIndex(event => event.id === parseInt(eventId));
   
-  // If the event is found, remove it from the events array
+  
   if (eventIndex !== -1) {
     events.splice(eventIndex, 1);
-    res.redirect('/events'); // Redirect to the events page after deletion
+    res.redirect('/events'); 
   } else {
     res.status(404).send('Event not found');
   }

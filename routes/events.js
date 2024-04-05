@@ -26,7 +26,7 @@ router.get('/new', (req, res) => {
 });
 
 // Route to create a new event
-router.post('/', eventsCtrl.createEvent);
+router.post('/new', eventsCtrl.createEvent);
 
 // Route to get all events
 router.get('/', (req, res) => {

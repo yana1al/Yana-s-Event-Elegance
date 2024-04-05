@@ -50,4 +50,4 @@ Run the app: npm start
 
 
  App browser: Google, Safari, Firefox
- Access @ localhost:3000
+ Access @ [Yana-s-invitess](https://yana-s-invitess-c5fb1ede161f.herokuapp.com/)

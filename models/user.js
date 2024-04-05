@@ -10,7 +10,10 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true
-  }
+  },
+  googleId: String, 
+  displayName: String, 
+  
 });
 
 userSchema.pre('save', async function(next) {

@@ -15,6 +15,17 @@
       <a href="/events" <%- title === 'My Events' ? 'class="active"' : '' %>>MY EVENTS</a>
       <a href="/subscribers/new" <%- title === 'Sign In' ? 'class="active"' : '' %>>SIGN IN</a>
     </nav>
-    <script src="/js/client.js"></script>
+   
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          var privacyPolicyLink = document.getElementById('privacy-policy-link');
+          var privacyPolicyNote = document.getElementById('privacy-policy-note');
+
+          privacyPolicyLink.addEventListener('click', function(event) {
+              event.preventDefault();
+              privacyPolicyNote.style.display = privacyPolicyNote.style.display === 'block' ? 'none' : 'block';
+          });
+      });
+  </script>
 </body>
 </html>

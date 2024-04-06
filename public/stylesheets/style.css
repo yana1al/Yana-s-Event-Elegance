@@ -132,16 +132,16 @@ th {
 }
 
 hr {
-  color: #424748;
+  color: rgb(187, 155, 228);
 }
 
 #badge-container {
   display: flex;
   flex-wrap: wrap;
-  width: 80%;
+  width: 100%;
   border: 2px solid #B8C0C2;
   border-radius: .5rem;
-  margin: .5rem 0 2rem;
+  margin: 2rem 0 2rem;
 }
 
 .badge {
@@ -169,7 +169,7 @@ hr {
 }
 
 .left-column {
-  width: 45%;
+  width: 50%;
 }
 
 .right-column {
@@ -191,12 +191,21 @@ header {
   text-align: center;
 }
 
+/* Add this CSS to your stylesheet */
 footer {
-  background-color: #c4c0c6;
-  color: #090101;
-  padding: 40px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f8f9fa; /* Adjust the background color as needed */
+  padding: 10px;
   text-align: center;
 }
+
+.main-content {
+  margin-bottom: 20px; /* Adjust the margin to accommodate the footer height */
+}
+
 
 .main-content {
   display: flex;

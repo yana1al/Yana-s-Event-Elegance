@@ -19,7 +19,7 @@ router.get('/', async (req, res, next) => {
 
         // Pass both upcoming and past events to the template
         const user = req.user || null;
-        res.render('events/index', { title: 'Welcome', user: user, events: { upcoming: upcomingEvents, past: pastEvents } }); 
+        res.render('index', { title: 'Welcome', user: user, events: { upcoming: upcomingEvents, past: pastEvents } }); 
     } catch (error) {
         next(error); // Pass any errors to the error handler middleware
     }

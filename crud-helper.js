@@ -23,7 +23,7 @@ require('dotenv').config();
 require('./config/database');
 
 // Require the app's Mongoose models
-const Event = require('./models/event');
+
 const Subscriber = require('./models/subscriber');
 
 // Example CRUD

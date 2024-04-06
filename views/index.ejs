@@ -1,75 +1,27 @@
-<!-- <%- include('./partials/header', { title: 'Welcome' }) %>
+<%- include('./partials/header') %>
 
-<section id="event-list">
-  
-  <div>
-    <h2>Upcoming Events</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Occasion</th>
-          <th>Date</th>
-          <th>Time</th>
-          <th>Venue</th>
-          <th>RSVP</th>
-          <th>Actions</th> 
-        </tr>
-      </thead>
-      <tbody>
-        <% events.upcoming.forEach(function(event) { %> 
-          <tr>
-            <td><%= event.occasion %></td>
-            <td><%= event.date %></td>
-            <td><%= event.time %></td>
-            <td><%= event.venue %></td>
-            <td class="rsvp-options">
-              <label><input type="radio" name="<%= event._id %>-rsvp" value="going"> Going</label>
-              <label><input type="radio" name="<%= event._id %>-rsvp" value="not-going"> Not Going</label>
-              <label><input type="radio" name="<%= event._id %>-rsvp" value="maybe"> Maybe</label>
-            </td>
-            <td class="actions">
-              <a href="/events/<%= event._id %>">DETAILS</a> 
-              <a href="/events/<%= event._id %>/edit">UPDATE</a> 
-              <form action="/events/<%= event.id %>" method="POST">
-                <input type="hidden" name="_method" value="DELETE">
-                <button type="submit">DELETE</button> 
-              </form>
-              
-            </td>
-          </tr>
-        <% }); %>
-      </tbody>
-    </table>
-  </div>
+<div>Welcome Planners!! Enjoy Creating your Brand New Event Here</div>
+<div class="image-container">
+<img src="/stylesheets/eventBackground.jpeg" alt="Image Description" style="max-width: 1000px; height: 200px;">
+<img src="/stylesheets/home.png" alt="Image Description" style="max-width: 1000px; height: 200px;">
+<img src="/stylesheets/images3.jpeg" alt="Image Description" style="max-width: 1000px; height: 200px;">
 
-  <div>
-    <h2>Past Events</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Occasion</th>
-          <th>Date</th>
-          <th>Time</th>
-          <th>Venue</th>
-          <th>Actions</th> 
-        </tr>
-      </thead>
-      <tbody>
-        <% events.past.forEach(function(event) { %> 
-          <tr>
-            <td><%= event.occasion %></td>
-            <td><%= event.date %></td>
-            <td><%= event.time %></td>
-            <td><%= event.venue %></td>
-            <td class="actions">
-              <a href="/events/<%= event._id %>">DETAILS</a> 
-              
-            </td>
-          </tr>
-        <% }); %>
-      </tbody>
-    </table>
-  </div>
-</section>
+</div>
+<div>
+  <h2>Plan Your Events with Ease</h2>
+  <p>Our Event Planner App simplifies the process of organizing and managing events. Whether it's a birthday party, wedding, conference, or any other special occasion, our app has you covered.</p>
+</div>
 
-<%- include('./partials/footer') %> -->
+<div>
+  <h2>Key Features:</h2>
+  <ul>
+    <li>Easy Event Creation: Quickly create new events with customizable details such as occasion, date, time, venue, and guest list.</li>
+    <li>Guest Management: Keep track of RSVPs, invite guests, and manage attendee lists effortlessly.</li>
+    <li>Task Management: Stay organized with task lists, reminders, and deadlines for event planning tasks.</li>
+    
+  </ul>
+</div>
+
+
+
+<%- include('./partials/footer') %>

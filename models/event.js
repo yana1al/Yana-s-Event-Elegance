@@ -21,22 +21,18 @@ const eventSchema = new Schema({
   invite: String,
   guestCount: {
     type: Number,
-    required: true
+    required: false
   },
   details: String,
   contactHostEmail: {
     type: String,
-    required: true
+    required: false
   },
   contactHostPhone: {
     type: String,
-    required: true
+    required: false
   },
-  rsvp: {
-    type: String,
-    enum: ['Going', 'Not Going', 'Maybe'],
-    default: 'Maybe'
-  },
+ 
   happeningNow: {
     type: Boolean,
     default: false

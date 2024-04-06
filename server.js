@@ -1,10 +1,9 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var session = require('express-session'); // Add this line to require express-session
-
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const session = require('express-session');
 require('dotenv').config();
 require('./config/database');
 
@@ -14,7 +13,7 @@ const reviewsRouter = require('./routes/reviews');
 const subscribersRouter = require('./routes/subscribers');
 const authRouter = require('./routes/auth');
 
-var app = express();
+const app = express();
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -25,11 +24,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Configure and mount session middleware
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
-  secret: process.env.SECRET,
+  secret: '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',
   resave: false,
   saveUninitialized: true
 }));

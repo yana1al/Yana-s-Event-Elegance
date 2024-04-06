@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const eventsCtrl = require('../controllers/events');
 
+
 // Define  array of events
 let events = [
   {
@@ -23,7 +24,12 @@ let events = [
 router.get('/new', (req, res) => {
     res.render('events/new', { title: 'Create New Event' });
   });
-  
+// Assuming app is your Express application instance
+router.get('/views/home', function(req, res) {
+  // Render the home.ejs file
+  res.render('home', { title: 'WELCOME' });
+});
+
   // Route to create a new event
   router.post('/', eventsCtrl.createEvent);
   

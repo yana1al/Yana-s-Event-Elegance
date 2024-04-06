@@ -1,9 +1,10 @@
 const Event = require('../models/Event'); // Ensure the correct path and filename
 
+
 exports.getAllEvents = async (req, res) => {
   try {
     const events = await Event.find();
-    res.render('events/index', { events, title: 'My Events' });
+    res.render('events/index', { events, title: 'events' });
   } catch (error) {
     console.error('Error fetching all events:', error);
     res.status(500).render('error', { message: 'Internal Server Error' });

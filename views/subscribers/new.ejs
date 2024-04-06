@@ -73,10 +73,11 @@
         <input type="email" id="email" name="email" required>
       </div>
       <div>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
+        <label for="signin-password">Password:</label>
+        <input type="password" id="signin-password" name="password" required>
       </div>
       <input type="submit" value="Sign In">
+      <div id="google-signin-button" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
       <div><button id="logout-button">Logout</button></div>
     </form>
     <div>
@@ -92,9 +93,10 @@
       <input type="text" id="name" name="name" required>
       <label for="contactInformation">Contact Information (Email/Phone Number):</label>
       <input type="text" id="contactInformation" name="contactInformation" required>
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
+      <label for="signup-password"">Password:</label>
+      <input type="password" id="signup-password" name="password" required>
       <input type="submit" value="Sign Up">
+      <div id="google-signup-button" class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
     </form>
     <div style="margin-top: 20px;">
       Already have an account? <a href="#" id="signin-link">Rejoin</a>
@@ -105,7 +107,35 @@
 
 <%- include('../partials/footer') %>
 
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
 <script>
+  // Function to handle Google sign-in success
+  function onSignIn(googleUser) {
+    const profile = googleUser.getBasicProfile();
+    const idToken = googleUser.getAuthResponse().id_token;
+    // Send idToken to the server for authentication
+    fetch('/auth/google', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ idToken })
+    })
+    .then(response => response.json())
+    .then(data => {
+      // Handle the response from the server (e.g., redirect to dashboard)
+      if (data.success) {
+        window.location.href = '/dashboard';
+      } else {
+        console.error('Google authentication failed:', data.error);
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+  }
+
   document.getElementById('signin-link').addEventListener('click', function(event) {
     event.preventDefault();
     document.getElementById('signin-container').style.display = 'block';
@@ -127,7 +157,6 @@
     })
     .then(response => {
       if (response.ok) {
-        
         window.location.href = '/login'; 
       } else {
         // Handle error

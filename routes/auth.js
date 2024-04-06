@@ -1,28 +1,23 @@
+// auth.js
 const express = require('express');
+const passport = require('passport');
 const router = express.Router();
-const authController = require('../controllers/auth');
 
-// POST /auth/signup
-router.post('/signup', authController.signup);
+// Google OAuth authentication route
+router.post('/google', passport.authenticate('google-id-token'), (req, res) => {
+  // If authentication is successful, send success response
+  res.json({ success: true });
+});
 
-// POST /auth/login
-router.post('/login', authController.login);
-
-router.post('/', (req, res) => {
-    const { email, password } = req.body;
-
-  if (!email || !password) {
-    return res.status(400).json({ error: 'Email and password are required' });
-  }
-
-  if (email === 'example@email.com' && password === 'password') {
-    
-    return res.status(200).json({ message: 'Authentication successful' });
+function isAuthenticated(req, res, next) {
+  // Check if the user is authenticated, for example, using Passport.js or any other authentication mechanism
+  if (req.isAuthenticated()) {
+    // If authenticated, proceed to the next middleware or route handler
+    return next();
   } else {
-    
-    return res.status(401).json({ error: 'Invalid email or password' });
+    // If not authenticated, redirect the user to the login page or send an error response
+    res.redirect('/login'); // Modify this according to your application's login route
   }
-   
-  });
+}
 
 module.exports = router;

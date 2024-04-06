@@ -26,8 +26,8 @@ router.get('/new', (req, res) => {
 });
 
 // Route to render the home page
-router.get('/views/home', function(req, res) {
-  res.render('home', { title: 'WELCOME' });
+router.get('/views/index', function(req, res) {
+  res.render('index', { title: 'WELCOME' });
 });
 
 // Route to create a new event
@@ -40,7 +40,7 @@ router.post('/', async (req, res) => {
       const newEvent = await Event.create(eventData);
 
       // Redirect the user to the "My Events" page
-      res.redirect('/events/my-events');
+      res.redirect('/events');
   } catch (error) {
       // Handle any errors
       console.error('Error adding new event:', error);

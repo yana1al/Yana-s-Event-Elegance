@@ -1,4 +1,6 @@
-const Event = require('../models/Event'); // Ensure the correct path and filename
+const Event = require('../models/Event'); 
+const mongoose = require('mongoose');
+
 
 
 exports.getAllEvents = async (req, res) => {
@@ -14,6 +16,9 @@ exports.getAllEvents = async (req, res) => {
 exports.getEventById = async (req, res) => {
   try {
     const eventId = req.params.id;
+    if (!mongoose.Types.ObjectId.isValid(eventId)) {
+      return res.status(400).json({ error: 'Invalid event ID' });
+    }
     const event = await Event.findById(eventId);
     if (!event) {
       return res.status(404).json({ error: 'Event not found' });
@@ -24,6 +29,8 @@ exports.getEventById = async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 };
+
+
 
 exports.createEvent = async (req, res) => {
   const { occasion, date, time, venue, guestCount, rsvp, details } = req.body;

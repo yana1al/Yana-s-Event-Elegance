@@ -8,13 +8,13 @@
   <title><%= title %></title>
 </head>
 <body>
-    <nav>
-      <img src="/stylesheets/Logo.png" alt="YANA Logo" />
-      <a href="/views/home" <%= title === 'Welcome' ? 'class="active"' : '' %>>WELCOME</a>
-      <a href="/events/new" <%- title === 'New Event' ? 'class="active"' : '' %>>CREATE EVENT</a>
-      <a href="/events" <%- title === 'My Events' ? 'class="active"' : '' %>>MY EVENTS</a>
-      <a href="/subscribers/new" <%- title === 'Sign In' ? 'class="active"' : '' %>>SIGN IN</a>
-    </nav>
+  <nav>
+    <img src="/stylesheets/Logo.png" alt="YANA Logo" />
+    <a href="/" <%= title === 'Welcome' ? 'class="active"' : '' %>>WELCOME</a>
+    <a href="/events/new" <%= title === 'New Event' ? 'class="active"' : '' %>>CREATE EVENT</a>
+    <a href="/events" <%= title === 'My Events' ? 'class="active"' : '' %>>MY EVENTS</a>
+    <a href="/subscribers/new" <%= title === 'Sign In' ? 'class="active"' : '' %>>SIGN IN</a>
+  </nav>
    
     <script>
       document.addEventListener('DOMContentLoaded', function() {

@@ -35,7 +35,7 @@ const eventSchema = new Schema({
  
   happeningNow: {
     type: Boolean,
-    default: false
+    default: true
   },
   guests: [{
     name: String,

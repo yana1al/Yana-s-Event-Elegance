@@ -1,4 +1,3 @@
-// subscribers.js
 const express = require('express');
 const router = express.Router();
 const subscribersCtrl = require('../controllers/subscribers');

@@ -30,7 +30,7 @@ passport.use(new GoogleStrategy({
         // If user doesn't exist, create a new user
         user = new User({
           googleId: profile.id,
-          email: profile.emails[0].value // You may store additional user information here
+          email: profile.emails[0].value 
         });
         await user.save();
       }
@@ -53,6 +53,8 @@ passport.deserializeUser(async (id, done) => {
     done(err);
   }
 });
+
+
 
 const indexRouter = require('./routes/index');
 const eventsRouter = require('./routes/events');

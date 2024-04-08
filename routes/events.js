@@ -3,7 +3,7 @@ const router = express.Router();
 const Event = require('../models/Event'); // Import the Event model
 const eventsCtrl = require('../controllers/events');
 
-// Define array of events
+// Define array of events (this will be replaced by database operations)
 let events = [
   {
     id: 1,
@@ -21,30 +21,31 @@ let events = [
   },  
 ];
 
+// Route to render the form for creating a new event
 router.get('/new', (req, res) => {
   res.render('events/new', { title: 'Create New Event' });
 });
 
 // Route to render the home page
-router.get('/views/index', function(req, res) {
+router.get('/index', function(req, res) {
   res.render('index', { title: 'WELCOME' });
 });
 
 // Route to create a new event
 router.post('/', async (req, res) => {
   try {
-      // Extract event data from the request body
-      const eventData = req.body; // Assuming req.body contains all necessary event data
+    // Extract event data from the request body
+    const eventData = req.body; // Assuming req.body contains all necessary event data
 
-      // Create a new event in the database
-      const newEvent = await Event.create(eventData);
+    // Create a new event in the database
+    const newEvent = await Event.create(eventData);
 
-      // Redirect the user to the "My Events" page
-      res.redirect('/events');
+    // Redirect the user to the "My Events" page
+    res.redirect('/events');
   } catch (error) {
-      // Handle any errors
-      console.error('Error adding new event:', error);
-      res.status(500).send('Error adding new event');
+    // Handle any errors
+    console.error('Error adding new event:', error);
+    res.status(500).send('Error adding new event');
   }
 });
 
